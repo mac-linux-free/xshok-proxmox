@@ -45,7 +45,7 @@ XS_APTUPGRADE="yes"
 # Customise bashrc
 XS_BASHRC="yes"
 # Add the latest ceph provided by proxmox
-XS_CEPH="yes"
+XS_CEPH="no"
 # Disable portmapper / rpcbind (security)
 XS_DISABLERPC="yes"
 # Ensure Entropy Pools are Populated, prevents slowdowns whilst waiting for entropy
@@ -53,7 +53,7 @@ XS_ENTROPY="yes"
 # Protect the web interface with fail2ban
 XS_FAIL2BAN="yes"
 # Detect if is running in a virtual machine and install the relavant guest agent
-XS_GUESTAGENT="yes"
+XS_GUESTAGENT="no"
 # Install ifupdown2 for a virtual internal network allows rebootless networking changes (not compatible with openvswitch-switch)
 XS_IFUPDOWN2="yes"
 # Limit the size and optimise journald
@@ -61,7 +61,7 @@ XS_JOURNALD="yes"
 # Install kernel source headers
 XS_KERNELHEADERS="yes"
 # Install kexec, allows for quick reboots into the latest updated kernel set as primary in the boot-loader.
-XS_KEXEC="yes"
+XS_KEXEC="no"
 # Ensure ksmtuned (ksm-control-daemon) is enabled and optimise according to ram size
 XS_KSMTUNED="yes"
 # Set language, if chnaged will disable XS_NOAPTLANG
@@ -89,17 +89,17 @@ XS_NOSUBBANNER="yes"
 # Install openvswitch for a virtual internal network
 XS_OPENVSWITCH="no"
 # Detect if this is an OVH server and install OVH Real Time Monitoring
-XS_OVHRTM="yes"
+XS_OVHRTM="no"
 # Set pigz to replace gzip, 2x faster gzip compression
 XS_PIGZ="yes"
 # Bugfix: high swap usage with low memory usage
 XS_SWAPPINESS="yes"
 # Enable TCP BBR congestion control
-XS_TCPBBR="yes"
+XS_TCPBBR="no"
 # Enable TCP fastopen
-XS_TCPFASTOPEN="yes"
+XS_TCPFASTOPEN="no"
 # Enable testing proxmox repo
-XS_TESTREPO="no"
+XS_TESTREPO="yes"
 # Automatically Synchronize the time
 XS_TIMESYNC="yes"
 # Set Timezone, empty = set automatically by IP
@@ -111,7 +111,7 @@ XS_VZDUMP="yes"
 # Optimise ZFS arc size accoring to memory size
 XS_ZFSARC="yes"
 # Install zfs-auto-snapshot
-XS_ZFSAUTOSNAPSHOT="yes"
+XS_ZFSAUTOSNAPSHOT="no"
 
 #################  D O   N O T   E D I T  ######################################
 
@@ -496,14 +496,14 @@ if [ "$XS_MOTD" == "yes" ] ; then
 ## Pretty MOTD BANNER
   if ! grep -q https "/etc/motd" ; then
     cat << 'EOF' > /etc/motd.new
-	   This system is optimised by:            https://eXtremeSHOK.com
-	     __   ___                            _____ _    _  ____  _  __
-	     \ \ / / |                          / ____| |  | |/ __ \| |/ /
-	  ___ \ V /| |_ _ __ ___ _ __ ___   ___| (___ | |__| | |  | | ' /
-	 / _ \ > < | __| '__/ _ \ '_ ` _ \ / _ \\___ \|  __  | |  | |  <
-	|  __// . \| |_| | |  __/ | | | | |  __/____) | |  | | |__| | . \
-	 \___/_/ \_\\__|_|  \___|_| |_| |_|\___|_____/|_|  |_|\____/|_|\_\
-
+This system is optimised by: https://neokey.de
+                      _              
+     _ __   ___  ___ | | _____ _   _ 
+    | '_ \ / _ \/ _ \| |/ / _ \ | | |
+    | | | |  __/ (_) |   <  __/ |_| |
+    |_| |_|\___|\___/|_|\_\___|\__, |
+                                |___/ 
+				
 
 EOF
 
@@ -669,13 +669,13 @@ net.core.somaxconn=8151
 net.core.wmem_max=16777216
 net.ipv4.conf.all.accept_redirects = 0
 net.ipv4.conf.all.accept_source_route = 0
-net.ipv4.conf.all.log_martians = 1
+net.ipv4.conf.all.log_martians = 0
 net.ipv4.conf.all.rp_filter = 1
 net.ipv4.conf.all.secure_redirects = 0
 net.ipv4.conf.all.send_redirects = 0
 net.ipv4.conf.default.accept_redirects = 0
 net.ipv4.conf.default.accept_source_route = 0
-net.ipv4.conf.default.log_martians = 1
+net.ipv4.conf.default.log_martians = 0
 net.ipv4.conf.default.rp_filter = 1
 net.ipv4.conf.default.secure_redirects = 0
 net.ipv4.conf.default.send_redirects = 0
