@@ -97,7 +97,7 @@ XS_SWAPPINESS="yes"
 # Enable TCP BBR congestion control
 XS_TCPBBR="no"
 # Enable TCP fastopen
-XS_TCPFASTOPEN="no"
+XS_TCPFASTOPEN="yes"
 # Enable testing proxmox repo
 XS_TESTREPO="yes"
 # Automatically Synchronize the time
