@@ -71,7 +71,7 @@ XS_LIMITS="yes"
 # Optimise logrotate
 XS_LOGROTATE="yes"
 # Lynis security scan tool by Cisofy
-XS_LYNIS="yes"
+XS_LYNIS="no"
 # Increase Max FS open files
 XS_MAXFS="yes"
 # Optimise Memory
